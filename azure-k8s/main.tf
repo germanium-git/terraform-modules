@@ -28,6 +28,10 @@ resource "azurerm_kubernetes_cluster" "main" {
   }
 }
 
+output "k8s_api_url" {
+  value     = azurerm_kubernetes_cluster.main.fqdn
+  sensitive = false
+}
 
 output "azurerm_kubernetes_cluster" {
   value     = azurerm_kubernetes_cluster.main
